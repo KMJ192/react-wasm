@@ -126,6 +126,7 @@ module.exports = {
     })
   ],
   experiments: {
-    syncWebAssembly: true
+    syncWebAssembly: true,
+    asyncWebAssembly: true
   }
 };
