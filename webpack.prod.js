@@ -18,7 +18,7 @@ const config = {
       cacheGroups:{
           commons:{
             test: /[\\/]node_modules[\\/]/,
-            name: 'venders',
+            name: 'vendors',
             chunks: 'all'
           }
       }

@@ -13,7 +13,7 @@ function App() {
   const [count, setCount] = useState(0);
   useEffect(() => {
     setTimeout(() => {
-      import('../wasm-rust/pkg').then((module: WasmModule) => {
+      import('../wasm-rust/pkg').then((module: WasmModule)=> {
         if(count < 9){
           console.log(module.rust_vec()[count]);
           setCount(module.add(count, 1));
