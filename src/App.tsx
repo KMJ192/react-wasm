@@ -14,12 +14,8 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       import('../wasm-rust/pkg').then((module: WasmModule)=> {
-        if(count < 9){
-          console.log(module.rust_vec()[count]);
-          setCount(module.add(count, 1));
-        }else{
-          setCount(0);
-        }
+        if(count < 100) setCount(module.add(count, 1));
+        else setCount(0);
       });
     }, 1000);
   }, [count]);
@@ -31,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);

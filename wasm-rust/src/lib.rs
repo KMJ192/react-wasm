@@ -32,5 +32,5 @@ pub fn div(a: i32, b: i32) -> i32{
 
 #[wasm_bindgen]
 pub fn rust_vec() -> Vec<i32>{
-    vec![1, 2, 3, 4, 5, 6, 7, 8, 9]
+    vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
