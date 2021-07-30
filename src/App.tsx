@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  import('wasm-rust').then(module => {
-    module.greet("webassembly 연동 성공!");
-  });
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    setTimeout(() => {
+      import('wasm-set').then(module => {
+        setCount(module.add(count, 1));
+      });
+    }, 1000);
+  }, [count]);
 
   return(
     <div className="app">
-      Setting react from webpack
+      연산 결과 {count}
     </div>
   );
 }

@@ -13,7 +13,7 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "wasm-rust": "file:./wasm-rust/pkg"
+    "wasm-set": "file:./wasm-rust/pkg"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
