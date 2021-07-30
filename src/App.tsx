@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 interface WasmModule{
-  readonly default: typeof import("../node_modules/wasm-set/wasm_rust");
   greet(name: string): void;
   add(a: number, b: number): number;
   sub(a: number, b: number): number;
@@ -14,7 +13,7 @@ function App() {
   const [count, setCount] = useState(0);
   useEffect(() => {
     setTimeout(() => {
-      import('wasm-set').then((module: WasmModule) => {
+      import('../wasm-rust/pkg').then((module: WasmModule) => {
         if(count < 9){
           console.log(module.rust_vec()[count]);
           setCount(module.add(count, 1));
@@ -27,7 +26,7 @@ function App() {
 
   return(
     <div className="app">
-      연산 결과 {count}
+      wasm calculation {count}
     </div>
   );
 }

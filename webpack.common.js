@@ -12,7 +12,7 @@ const postcssLoader = {
   loader: 'postcss-loader',
   options: {
       postcssOptions: {
-          config: path.resolve(__dirname, 'postcss.config.js')
+        config: path.resolve(__dirname, 'postcss.config.js')
       }
   }
 }
@@ -91,11 +91,6 @@ module.exports = {
                 limit: 8192
             }
         }]
-      },
-      {
-        test: /\.wasm$/i,
-        use: ['wasm-loader'],
-        exclude: /node_modules/
       }
     ],
   },
@@ -123,7 +118,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
         IS_PRODUCTION: isProd
-    })
+    }),
   ],
   experiments: {
     syncWebAssembly: true,
