@@ -74,7 +74,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
                 name() {
-                    if(!isProduction){
+                    if(!isProd){
                         return '[path][name].[ext]';
                     }
                     return '[contenthash].[ext]';
