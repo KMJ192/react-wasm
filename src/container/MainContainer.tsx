@@ -26,7 +26,7 @@ function MainComponent() {
         dom: false
       });
     }
-  }
+  };
 
   if (page.dom === true) {
     return <Redirect to={DOCUMENT_PATH} />
@@ -35,15 +35,9 @@ function MainComponent() {
   }
   
   return (
-    <div>
-      <button
-        className={cx('button-group')}
-        onClick={paging.gotoDocument}
-      >Document</button>
-      <button
-        className={cx('button-group')}
-        onClick={paging.gotoEvent}
-      >Event</button>
+    <div className={cx('button-group')}>
+      <button onClick={paging.gotoDocument}>Document</button>
+      <button onClick={paging.gotoEvent}>Event</button>
     </div>
   )
 }
