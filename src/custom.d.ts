@@ -13,12 +13,17 @@ declare module '*.module.sass' {
   export default classes;
 }
 
-declare module '*.module.less' {
-  const classes: { [key: string]: string };
-  export default classes;
-}
+// declare module '*.module.less' {
+//   const classes: { [key: string]: string };
+//   export default classes;
+// }
 
-declare module '*.module.styl' {
-  const classes: { [key: string]: string };
+// declare module '*.module.styl' {
+//   const classes: { [key: string]: string };
+//   export default classes;
+// }
+
+declare module '*.svg' {
+  const classes: string;
   export default classes;
 }

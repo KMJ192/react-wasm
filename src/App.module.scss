@@ -1,0 +1,8 @@
+@import './styles/global.scss';
+
+.app {
+  background-color: $global-background-color;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}

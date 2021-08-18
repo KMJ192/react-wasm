@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 
-interface WasmModule{
-  greet(name: string): void;
-  add(a: number, b: number): number;
-  sub(a: number, b: number): number;
-  mul(a: number, b: number): number;
-  div(a: number, b: number): number;
-  rust_vec(): Int32Array;
-}
+import NotFound from './container/NotFound';
+import MainContainer from './container/MainContainer';
+import DocumentContainer from './container/document/DocumentContainer';
+import EventContainer from './container/event/EventContainer';
+
+import classnames from 'classnames/bind';
+import style from './App.module.scss';
+const cx = classnames.bind(style);
+
+import { DOCUMENT_PATH, EVENT_PATH } from './static/address';
 
 function App() {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    setTimeout(() => {
-      import('../wasm-rust/pkg').then((module: WasmModule)=> {
-        if(count < 100) setCount(module.add(count, 1));
-        else setCount(0);
-      });
-    }, 1000);
-  }, [count]);
-
   return(
-    <div className="app">
-      wasm calculation {count}
+    <div className={cx('app')}>
+      <BrowserRouter>
+        <Switch>
+          <Route path='/' exact component={MainContainer} />
+          <Route path={DOCUMENT_PATH} exact component={DocumentContainer} />
+          <Route path={EVENT_PATH} exact component={EventContainer} />
+          <Route exact component={NotFound}/>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

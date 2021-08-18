@@ -1,0 +1,29 @@
+// color
+$global-background-color: #4597df;
+
+@mixin buttonGroup {
+  box-shadow: 2px 2px 3px rgba(53, 53, 53, 0.5);
+  border-radius: 3px 3px;
+  
+  & > button {
+    background-color: rgba(144, 229, 255, 0.5);
+    border: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 3px 3px;
+    color: #ffffff;
+  
+    &:hover {
+      color: #000000;
+      background-color: rgba(0, 255, 255, 0.9);
+    }
+  }
+}
+
+@mixin mainScreen {
+  background-color: #646464;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}

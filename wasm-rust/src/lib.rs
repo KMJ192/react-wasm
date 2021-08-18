@@ -1,36 +1,12 @@
 use wasm_bindgen::prelude::*;
+extern crate js_sys;
 
 #[wasm_bindgen]
-extern {
-    pub fn alert(s: &str);
+pub fn console_log(arg: js_sys::Array) {
+  web_sys::console::log(&arg);
 }
 
 #[wasm_bindgen]
-pub fn greet(name: &str) {
-    alert(&format!("{}", name));
-}
-
-#[wasm_bindgen]
-pub fn add(a: i32, b: i32) -> i32{
-    a + b
-}
-
-#[wasm_bindgen]
-pub fn sub(a: i32, b: i32) -> i32{
-    a - b
-}
-
-#[wasm_bindgen]
-pub fn mul(a: i32, b: i32) -> i32{
-    a * b
-}
-
-#[wasm_bindgen]
-pub fn div(a: i32, b: i32) -> i32{
-    a / b
-}
-
-#[wasm_bindgen]
-pub fn rust_vec() -> Vec<i32>{
-    vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+pub fn console_log_1(arg: String) {
+  web_sys::console::log_1(&arg.into());
 }
