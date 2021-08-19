@@ -6,7 +6,8 @@ function DocumentContainer() {
     const getWindow = import('../../../wasm-rust/pkg');
     getWindow
       .then(module => {
-        module.qeury_selector('query-selector');
+        //module.qeury_selector('query-selector');
+        module.set_canvas("canvas",  500, 500);
       }).catch(e => {
         console.log(e);
       });

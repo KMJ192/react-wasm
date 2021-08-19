@@ -27,3 +27,8 @@ pub fn create_element(arg: String) {
 pub fn qeury_selector(arg: String) {
    document_query_selector(arg);
 }
+
+#[wasm_bindgen]
+pub fn set_canvas(id: String, width: u32, height: u32) {
+  document_set_html_canvas(id, width, height);
+}

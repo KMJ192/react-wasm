@@ -55,3 +55,23 @@ pub fn document_query_selector(id: String) {
   let tmp = "set string from query-selector";
   node.set_inner_text(&tmp);
 }
+
+pub fn document_set_html_canvas(id: String, width: u32, height: u32) {
+  let canvas = document_get_element_by_id(id);
+
+  let canvas = canvas.dyn_into::<web_sys::HtmlCanvasElement>().map_err(|_|()).unwrap();
+  canvas.set_width(width);
+  canvas.set_height(height);
+  
+  let context = canvas
+                  .get_context("2d")
+                  .unwrap()
+                  .unwrap()
+                  .dyn_into::<web_sys::CanvasRenderingContext2d>()
+                  .unwrap();
+
+  context.begin_path();
+  context.rect(75.0, 75.0, 50.0, 50.0);
+
+  context.fill();
+}

@@ -21,5 +21,7 @@ features = [
   'Document',
   'Window',
   'HtmlElement',
-  'HtmlCollection'
+  'HtmlCollection',
+  'HtmlCanvasElement',
+  'CanvasRenderingContext2d'
 ]
