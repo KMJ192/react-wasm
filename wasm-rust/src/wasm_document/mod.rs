@@ -22,21 +22,36 @@ pub fn document_get_element_by_id(id: String) -> web_sys::HtmlElement {
   node
 }
 
-pub fn document_get_elements_by_classname(id: String) -> web_sys::HtmlCollection {
-  let window = get_window();
-  let document = get_document(window);
-
-  let node = document.get_elements_by_class_name(&id);
-  node
-}
-
-pub fn document_create_element(classname: String) {
+pub fn document_create_element(id: String) {
   let window = get_window();
   let document = get_document(window);
   
-  let _parent = document_get_element_by_id(classname);
+  let _parent = document_get_element_by_id(id);
+  let tmp = "
+    <div>
+      create div tag
+    </div>
+    <span>
+      create span tag
+    </span>
+  ";
+  let div_ele = document.create_element("div").unwrap();
+  div_ele.set_inner_html(tmp);
+  _parent.append_child(&div_ele).unwrap();
+}
 
-  let val = document.create_element("span").unwrap();
-  val.set_inner_html("Learn React Wasm");
-  _parent.append_child(&val).unwrap();
+pub fn document_query_selector(id: String) {
+  let window = get_window();
+  let document = get_document(window);
+
+  let mut query = String::from("#");
+  query.push_str(&id);
+
+  let node = document.query_selector(&query)
+              .unwrap()
+              .unwrap()
+              .dyn_into::<web_sys::HtmlElement>()
+              .unwrap();
+  let tmp = "set string from query-selector";
+  node.set_inner_text(&tmp);
 }

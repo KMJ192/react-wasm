@@ -6,14 +6,14 @@ function DocumentContainer() {
     const getWindow = import('../../../wasm-rust/pkg');
     getWindow
       .then(module => {
-        console.log(module.create_element('create-element'));
+        module.qeury_selector('query-selector');
       }).catch(e => {
         console.log(e);
       });
   }, []);
 
   return (
-    <div id='create-element'>
+    <div id='query-selector'>
       <DocumentComponent />
     </div>
   );
