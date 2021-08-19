@@ -10,7 +10,8 @@ import classnames from 'classnames/bind';
 import style from './App.module.scss';
 const cx = classnames.bind(style);
 
-import { DOCUMENT_PATH, EVENT_PATH } from './static/address';
+import { ARRAY_PATH, DOCUMENT_PATH, EVENT_PATH } from './static/address';
+import ArrayContainer from './container/array/ArrayContainer';
 
 function App() {
   return(
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' exact component={MainContainer} />
           <Route path={DOCUMENT_PATH} exact component={DocumentContainer} />
           <Route path={EVENT_PATH} exact component={EventContainer} />
+          <Route path={ARRAY_PATH} exact component={ArrayContainer} />
           <Route exact component={NotFound}/>
         </Switch>
       </BrowserRouter>
