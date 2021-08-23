@@ -1,12 +1,12 @@
 use wasm_bindgen::JsCast;
 // use wasm_bindgen::JsValue;
 
-fn get_window() -> web_sys::Window {
+pub fn get_window() -> web_sys::Window {
   let window = web_sys::window().expect("global window dose not exist");
   window
 }
 
-fn get_document(window: web_sys::Window) -> web_sys::Document {
+pub fn get_document(window: web_sys::Window) -> web_sys::Document {
   let document = window.document().expect("expecting a document on window");
   document
 }

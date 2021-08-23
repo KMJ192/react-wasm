@@ -32,3 +32,11 @@ pub fn qeury_selector(arg: String) {
 pub fn set_canvas(id: String, width: u32, height: u32) {
   document_set_html_canvas(id, width, height);
 }
+
+pub mod wasm_event;
+use wasm_event::*;
+
+#[wasm_bindgen]
+pub fn on_click(id: String) {
+  click_event(id);
+}

@@ -3,7 +3,9 @@ import React from 'react';
 function EventComponent() {
   return (
     <div>
-      Event
+      <button
+        id='wasm-onclick'
+      />
     </div>
   )
 }

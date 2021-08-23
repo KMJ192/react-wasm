@@ -24,5 +24,6 @@ features = [
   'HtmlElement',
   'HtmlCollection',
   'HtmlCanvasElement',
+  'HtmlParagraphElement',
   'CanvasRenderingContext2d'
 ]
