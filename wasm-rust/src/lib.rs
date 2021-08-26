@@ -37,6 +37,6 @@ pub mod wasm_event;
 use wasm_event::*;
 
 #[wasm_bindgen]
-pub fn on_click(id: String) {
-  click_event(id);
+pub fn on_click(id: String, btn_val: String) {
+  click_event(id, btn_val);
 }

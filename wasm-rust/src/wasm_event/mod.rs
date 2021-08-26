@@ -2,18 +2,15 @@ use gloo::{events::EventListener};
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
-pub fn click_event(id: String) {
+pub fn click_event(id: String, btn_val: String) {
   use super::wasm_document;
-  let window: web_sys::Window = wasm_document::get_window();
-  let document: web_sys::Document = wasm_document::get_document(window);
   let button = wasm_document::document_get_element_by_id(id);
-  button.set_text_content(Some("wasm-button"));
-  
-  let paragraph = document.create_element("p")
-                    .unwrap()
-                    .dyn_into::<web_sys::HtmlParagraphElement>()
-                    .unwrap();
-    
+  button.set_text_content(Some(&btn_val));
+  let on_click = EventListener::new(&button, "click", move |_event| {
+    web_sys::console::log_1(&String::from("button click!!").into());
+  });
+
+  on_click.forget();
 }
 
 // //Create a button element with an EventListener. When the button is clicked, a message will be logged to the console.

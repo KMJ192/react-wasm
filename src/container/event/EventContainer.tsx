@@ -3,7 +3,7 @@ import EventComponent from '../../component/event/EventComponent';
 
 function EventContainer() {
   import('./../../../wasm-rust/pkg').then(module => {
-    module.on_click("wasm-onclick");
+    module.on_click('wasm-onclick', 'button');
   })
 
   return (
@@ -11,4 +11,4 @@ function EventContainer() {
   );
 }
 
-export default EventContainer
+export default EventContainer;
