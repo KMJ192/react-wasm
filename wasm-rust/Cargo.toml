@@ -25,5 +25,6 @@ features = [
   'HtmlCollection',
   'HtmlCanvasElement',
   'HtmlParagraphElement',
-  'CanvasRenderingContext2d'
+  'CanvasRenderingContext2d',
+  'KeyboardEvent'
 ]

@@ -40,3 +40,18 @@ use wasm_event::*;
 pub fn on_click(id: String, btn_val: String) {
   click_event(id, btn_val);
 }
+
+#[wasm_bindgen]
+pub fn closurebutton(id: String, btn_val: String) {
+  closure_button(id, btn_val);
+}
+
+#[wasm_bindgen]
+pub fn mouse_move_event(id: String) {
+  mouse_move(id);
+}
+
+#[wasm_bindgen]
+pub fn input_string(input: String, output: String) {
+  keydown_event(input, output);
+}
