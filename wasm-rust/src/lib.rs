@@ -1,4 +1,5 @@
 use wasm_bindgen::prelude::*;
+use wasm_bindgen::JsValue;
 extern crate js_sys;
 
 #[wasm_bindgen]
@@ -54,4 +55,12 @@ pub fn mouse_move_event(id: String) {
 #[wasm_bindgen]
 pub fn input_string(input: String, output: String) {
   keydown_event(input, output);
+}
+
+pub mod wasm_svg;
+
+#[wasm_bindgen]
+pub fn output_svg(id: String) {
+  use wasm_svg::*;
+  svgelement_set_attribute(id);
 }
