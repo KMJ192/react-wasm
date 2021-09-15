@@ -34,3 +34,8 @@ pub fn svgelement_set_attribute(id: String) -> Result<(), JsValue> {
 
   Ok(())
 }
+
+#[path="import_img.rs"] mod import_img;
+pub fn import_img(dir: String) {
+  import_img::import_img(dir);
+}

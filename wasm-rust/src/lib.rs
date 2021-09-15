@@ -1,6 +1,6 @@
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsValue;
-extern crate js_sys;
+// extern crate js_sys;
 
 #[wasm_bindgen]
 pub fn console_log(arg: js_sys::Array) {
@@ -63,4 +63,10 @@ pub mod wasm_svg;
 pub fn output_svg(id: String) {
   use wasm_svg::*;
   svgelement_set_attribute(id);
+}
+
+#[wasm_bindgen]
+pub fn svg_import(dir: String) {
+  use wasm_svg::import_img;
+  import_img(dir);
 }
